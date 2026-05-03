@@ -45,7 +45,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: eideticresearch/missing-twin@v1
+      - uses: Eidetic-Research/missing-twin@v1
         with:
           mode: warn
           comment: true
