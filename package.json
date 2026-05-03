@@ -1,6 +1,6 @@
 {
   "name": "missing-twin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A repository-memory engine that detects likely omitted companion changes in a PR.",
   "type": "module",
   "license": "BUSL-1.1",

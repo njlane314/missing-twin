@@ -1,6 +1,9 @@
-name: Missing Twin
-description: "A repository-memory engine that detects likely omitted companion changes in a PR."
+name: PatchProof Missing Twin
+description: "Find omitted companion changes from repository history."
 author: njlane314
+branding:
+  icon: shield
+  color: blue
 inputs:
   base:
     description: "Base git ref. Defaults to the pull request base SHA/ref."

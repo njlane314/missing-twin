@@ -50500,7 +50500,7 @@ function preprocess(fn, schema) {
 
 
 const TOOL_NAME = 'missing-twin';
-const VERSION = '0.1.1';
+const VERSION = '0.1.2';
 const DEFAULT_CONFIG_PATH = '.github/missing-twin.yml';
 const ConfigSchema = object({
     mode: schemas_enum(['warn', 'fail']).default('warn'),
