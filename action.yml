@@ -12,7 +12,7 @@ inputs:
     description: "Head git ref. Defaults to the pull request head SHA/ref."
     required: false
   config:
-    description: "Config file path. Defaults to .github/missing-twin.yml."
+    description: "Config file path. Defaults to .github/engram.yml."
     required: false
   mode:
     description: "warn or fail. Defaults to warn."
@@ -31,7 +31,7 @@ inputs:
     required: false
     default: ${{ github.token }}
   model:
-    description: "Optional path to a precomputed missing-twin model JSON."
+    description: "Optional path to a precomputed Engram model JSON."
     required: false
   since:
     description: "Git history window used when learning on the fly."

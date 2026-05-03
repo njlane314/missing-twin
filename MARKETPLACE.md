@@ -25,4 +25,4 @@ Suggested listing summary:
 Find omitted companion changes from repository history.
 
 Suggested listing body:
-Use Engram when pull requests need evidence before merge. The action runs locally on the checked-out repository, avoids telemetry and LLM calls, and only uses the GitHub API for optional PR comments. Configure it under .github/missing-twin.yml and choose warn mode for advisory checks or fail mode for blocking checks.
+Use Engram when pull requests need evidence before merge. The action runs locally on the checked-out repository, avoids telemetry and LLM calls, and only uses the GitHub API for optional PR comments. Configure it under .github/engram.yml and choose warn mode for advisory checks or fail mode for blocking checks.

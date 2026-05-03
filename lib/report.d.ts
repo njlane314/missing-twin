@@ -21,7 +21,7 @@ export interface ScanResult {
     };
     findings: Finding[];
 }
-export declare const COMMENT_MARKER = "<!-- missing-twin-report -->";
+export declare const COMMENT_MARKER = "<!-- engram-report -->";
 export declare function createResult(input: {
     tool: string;
     version: string;

@@ -22,7 +22,7 @@ export interface ScanResult {
   findings: Finding[];
 }
 
-export const COMMENT_MARKER = '<!-- missing-twin-report -->';
+export const COMMENT_MARKER = '<!-- engram-report -->';
 
 export function createResult(input: { tool: string; version: string; base: string; head: string; mode: Mode; findings: Finding[] }): ScanResult {
   const errors = input.findings.filter((finding) => finding.severity === 'error').length;
@@ -39,7 +39,7 @@ export function createResult(input: { tool: string; version: string; base: strin
 }
 
 export function renderMarkdown(result: ScanResult): string {
-  const label = 'Missing Twin';
+  const label = 'Engram';
   if (result.findings.length === 0) return label + ' found no findings.';
   const noun = result.findings.length === 1 ? 'finding' : 'findings';
   const lines = [label + ' found ' + result.findings.length + ' ' + noun + '.', ''];

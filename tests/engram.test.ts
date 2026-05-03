@@ -6,7 +6,7 @@ import { describe, expect, it } from 'vitest';
 import { runScan } from '../src/index.js';
 
 function repo(): string {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'missing-twin-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'engram-'));
   git(dir, ['init', '-b', 'main']);
   git(dir, ['config', 'user.name', 'Human']);
   git(dir, ['config', 'user.email', 'human@example.com']);
@@ -32,7 +32,7 @@ function commit(cwd: string, message: string, author = 'Human'): void {
   });
 }
 
-describe('missing-twin', () => {
+describe('engram', () => {
   it('detects a missing companion file from co-change history', async () => {
     const cwd = repo();
     for (let i = 0; i < 5; i += 1) {

@@ -50499,13 +50499,13 @@ function preprocess(fn, schema) {
 
 
 
-const TOOL_NAME = 'missing-twin';
+const TOOL_NAME = 'engram';
 const VERSION = '0.1.3';
-const DEFAULT_CONFIG_PATH = '.github/missing-twin.yml';
+const DEFAULT_CONFIG_PATH = '.github/engram.yml';
 const ConfigSchema = object({
     mode: schemas_enum(['warn', 'fail']).default('warn'),
     since: schemas_string().default('18 months ago'),
-    model_path: schemas_string().default('.missing-twin/model.json'),
+    model_path: schemas_string().default('.engram/model.json'),
     min_support: schemas_number().int().min(1).default(4),
     min_confidence: schemas_number().min(0).max(1).default(0.7),
     min_lift: schemas_number().min(0).default(1.5),
@@ -50520,7 +50520,7 @@ function config_loadConfig(configPath = DEFAULT_CONFIG_PATH, cwd = process.cwd()
     let section = {};
     if (external_node_fs_default().existsSync(resolved)) {
         const parsed = (0,dist/* parse */.qg)(external_node_fs_default().readFileSync(resolved, 'utf8')) ?? {};
-        section = typeof parsed === 'object' && parsed !== null && 'missing_twin' in parsed ? parsed.missing_twin ?? {} : parsed;
+        section = typeof parsed === 'object' && parsed !== null && 'engram' in parsed ? parsed.engram ?? {} : parsed;
     }
     return ConfigSchema.parse({ ...section, ...compact(overrides) });
 }
@@ -50530,7 +50530,7 @@ function compact(value) {
 
 ;// CONCATENATED MODULE: ./src/report.ts
 
-const COMMENT_MARKER = '<!-- missing-twin-report -->';
+const COMMENT_MARKER = '<!-- engram-report -->';
 function createResult(input) {
     const errors = input.findings.filter((finding) => finding.severity === 'error').length;
     const warnings = input.findings.filter((finding) => finding.severity === 'warning').length;
@@ -50545,7 +50545,7 @@ function createResult(input) {
     };
 }
 function renderMarkdown(result) {
-    const label = 'Missing Twin';
+    const label = 'Engram';
     if (result.findings.length === 0)
         return label + ' found no findings.';
     const noun = result.findings.length === 1 ? 'finding' : 'findings';
@@ -50608,7 +50608,7 @@ async function runScan(options) {
         const best = candidates[0];
         if (!best)
             continue;
-        const id = 'missing-twin:' + stableHash(best.source + '->' + best.target);
+        const id = 'engram:' + stableHash(best.source + '->' + best.target);
         if (seen.has(id))
             continue;
         seen.add(id);
@@ -50822,7 +50822,7 @@ async function main() {
         lib_core.setOutput('markdown', markdown);
         lib_core.setOutput('findings', String(result.summary.findings));
         if (exitCodeFor(result) !== 0)
-            lib_core.setFailed('Missing Twin found blocking findings.');
+            lib_core.setFailed('Engram found blocking findings.');
     }
     catch (error) {
         lib_core.setFailed(error instanceof Error ? error.message : String(error));

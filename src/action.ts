@@ -63,7 +63,7 @@ async function main(): Promise<void> {
     core.setOutput('json', JSON.stringify(result));
     core.setOutput('markdown', markdown);
     core.setOutput('findings', String(result.summary.findings));
-    if (exitCodeFor(result) !== 0) core.setFailed('Missing Twin found blocking findings.');
+    if (exitCodeFor(result) !== 0) core.setFailed('Engram found blocking findings.');
   } catch (error) {
     core.setFailed(error instanceof Error ? error.message : String(error));
   }

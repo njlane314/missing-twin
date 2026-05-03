@@ -7,7 +7,7 @@ import { learnModel, runScan } from './index.js';
 import { exitCodeFor, renderMarkdown } from './report.js';
 
 const program = new Command();
-program.name('missing-twin').description('Detect likely omitted companion changes in a PR.').version(VERSION);
+program.name('engram').description('Detect likely omitted companion changes in a PR.').version(VERSION);
 
 program.command('scan')
   .requiredOption('--base <ref>', 'base git ref')
@@ -24,7 +24,7 @@ program.command('scan')
 
 program.command('learn')
   .option('--since <window>', 'git history window')
-  .option('--out <path>', 'model output path', '.missing-twin/model.json')
+  .option('--out <path>', 'model output path', '.engram/model.json')
   .option('--config <path>', 'config path', DEFAULT_CONFIG_PATH)
   .option('--ref <ref>', 'history ref', 'HEAD')
   .action((options) => {

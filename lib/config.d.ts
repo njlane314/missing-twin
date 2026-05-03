@@ -1,7 +1,7 @@
 import { z } from 'zod';
-export declare const TOOL_NAME = "missing-twin";
+export declare const TOOL_NAME = "engram";
 export declare const VERSION = "0.1.3";
-export declare const DEFAULT_CONFIG_PATH = ".github/missing-twin.yml";
+export declare const DEFAULT_CONFIG_PATH = ".github/engram.yml";
 export declare const ConfigSchema: z.ZodObject<{
     mode: z.ZodDefault<z.ZodEnum<{
         warn: "warn";

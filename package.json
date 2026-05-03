@@ -1,5 +1,5 @@
 {
-  "name": "missing-twin",
+  "name": "engram",
   "version": "0.1.3",
   "description": "A repository-memory engine that detects likely omitted companion changes in a PR.",
   "type": "module",
@@ -9,7 +9,7 @@
     "node": ">=20"
   },
   "bin": {
-    "missing-twin": "./lib/cli.js"
+    "engram": "./lib/cli.js"
   },
   "exports": {
     ".": "./lib/index.js"
