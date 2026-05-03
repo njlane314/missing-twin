@@ -1,4 +1,4 @@
-# Missing Twin
+# Engram
 
 Find the file, test, doc, generated client, fixture, or config change this PR probably forgot.
 
@@ -22,7 +22,7 @@ pnpm missing-twin scan --base origin/main --head HEAD --format json
 Use `actions/checkout` with full history so git comparisons are available.
 
 ```yaml
-name: Missing Twin
+name: Engram
 
 on:
   pull_request:
@@ -45,7 +45,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: Eidetic-Research/missing-twin@v1
+      - uses: Eidetic-Research/engram@v1
         with:
           mode: warn
           comment: true
