@@ -1,6 +1,6 @@
-name: PatchProof Missing Twin
+name: Eidetic Research Missing Twin
 description: "Find omitted companion changes from repository history."
-author: njlane314
+author: Eidetic Research
 branding:
   icon: shield
   color: blue
